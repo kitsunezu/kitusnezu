@@ -13,14 +13,13 @@ export function Experience({ items }: ExperienceProps) {
   const t = useTranslations("experience");
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 bg-muted/30">
+    <section className="min-h-screen py-24 px-4 sm:px-6">
       <div className="mx-auto max-w-4xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold tracking-tight sm:text-4xl"
+          className="text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent"
         >
           {t("heading")}
         </motion.h2>
@@ -29,12 +28,11 @@ export function Experience({ items }: ExperienceProps) {
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative pl-8 border-l-2 border-border"
+              className="relative pl-8 border-l-2 border-border hover:border-primary/60 transition-colors"
             >
-              <div className="absolute -left-3 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary">
+              <div className="absolute -left-3 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary ring-4 ring-background">
                 <Briefcase className="h-3 w-3 text-primary-foreground" />
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">

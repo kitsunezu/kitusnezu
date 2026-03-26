@@ -1,0 +1,10 @@
+services:
+  portfolio:
+    image: ghcr.io/slan1024/kitsunezu-portfolio:latest
+    container_name: kitsunezu-portfolio
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      # - GIST_ID=${GIST_ID}

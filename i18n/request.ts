@@ -14,8 +14,7 @@ export default getRequestConfig(async () => {
   const cookieLocale = cookieStore.get("NEXT_LOCALE")?.value;
   if (cookieLocale && isValidLocale(cookieLocale)) {
     return {
-      locale: cookieLocale,
-      messages: (await import(`../messages/${cookieLocale}.json`)).default,
+      locale: cookieLocale,      timeZone: "Asia/Taipei",      messages: (await import(`../messages/${cookieLocale}.json`)).default,
     };
   }
 
@@ -38,6 +37,7 @@ export default getRequestConfig(async () => {
     if (matched) {
       return {
         locale: matched,
+        timeZone: "Asia/Taipei",
         messages: (await import(`../messages/${matched}.json`)).default,
       };
     }
@@ -47,6 +47,7 @@ export default getRequestConfig(async () => {
   const defaultLocale = "en";
   return {
     locale: defaultLocale,
+    timeZone: "Asia/Taipei",
     messages: (await import(`../messages/${defaultLocale}.json`)).default,
   };
 });

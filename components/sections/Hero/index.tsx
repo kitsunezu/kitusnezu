@@ -1,8 +1,9 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface HeroProps {
@@ -57,26 +58,11 @@ export function Hero({ name, title }: HeroProps) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button
-            size="lg"
-            onClick={() =>
-              document
-                .getElementById("projects")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            <ArrowDown className="mr-2 h-4 w-4" />
+          <Button size="lg" nativeButton={false} render={<Link href="/projects" />}>
+            <ArrowRight className="mr-2 h-4 w-4" />
             {t("cta_primary")}
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
+          <Button size="lg" variant="outline" nativeButton={false} render={<Link href="/contact" />}>
             <Mail className="mr-2 h-4 w-4" />
             {t("cta_secondary")}
           </Button>

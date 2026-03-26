@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Slan Chong | 全端開發者",
-    "description": "Slan Chong（Kitsunezu）的個人作品集 — 專精 TypeScript、React 和雲原生基礎設施的全端開發者。"
+    "title": "Kitsunezu",
+    "description": "Portfolio of Slan Chong (Kitsunezu)"
   },
   "nav": {
     "about": "關於我",
@@ -14,14 +14,14 @@
   "hero": {
     "greeting": "你好，我是",
     "name": "Slan Chong",
-    "title": "全端開發者",
-    "subtitle": "使用 TypeScript、React 和雲原生技術打造現代化網頁體驗。",
+    "title": "Full-Stack Developer",
+    "subtitle": "歡迎來到我的網站！",
     "cta_primary": "查看作品",
     "cta_secondary": "與我聯繫"
   },
   "about": {
     "heading": "關於我",
-    "description": "我是一名全端開發者，熱衷於構建乾淨、可擴展的網頁應用。我喜歡在整個技術棧中工作 — 從使用 React 打造完美的 UI，到使用 Java Spring Boot 和 Node.js 設計穩健的後端系統。工作之餘，我經營自己的 Homelab，喜歡探索各種新技術。"
+    "description": "我是一名Full-Stack Developer，熱衷於構建乾淨、可擴展的網頁應用。我喜歡在整個技術棧中工作 — 從使用 React 打造完美的 UI，到使用 Java Spring Boot 和 Node.js 設計穩健的後端系統。工作之餘，我經營自己的 Homelab，喜歡探索各種新技術。"
   },
   "experience": {
     "heading": "工作經歷",

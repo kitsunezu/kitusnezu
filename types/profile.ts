@@ -19,6 +19,7 @@ export interface Education {
   degree: LocalizedString;
   startDate: string;
   endDate: string;
+  location?: LocalizedString;
   description?: LocalizedString;
 }
 

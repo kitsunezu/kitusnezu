@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Slan Chong | フルスタック開発者",
-    "description": "Slan Chong（Kitsunezu）のポートフォリオ — TypeScript、React、クラウドネイティブ技術を専門とするフルスタック開発者。"
+    "title": "Kitsunezu",
+    "description": "Portfolio of Slan Chong (Kitsunezu)"
   },
   "nav": {
     "about": "自己紹介",
@@ -15,7 +15,7 @@
     "greeting": "こんにちは、",
     "name": "Slan Chong",
     "title": "フルスタック開発者",
-    "subtitle": "TypeScript、React、クラウドネイティブ技術でモダンなウェブ体験を構築しています。",
+    "subtitle": "and this is my portfolio...",
     "cta_primary": "作品を見る",
     "cta_secondary": "お問い合わせ"
   },

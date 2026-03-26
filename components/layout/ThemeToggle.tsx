@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Monitor, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -13,7 +13,8 @@ import {
 import { useTranslations } from "next-intl";
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const theme = resolvedTheme;
   const [mounted, setMounted] = useState(false);
   const t = useTranslations("theme");
 
@@ -34,10 +35,8 @@ export function ThemeToggle() {
       >
           {theme === "dark" ? (
             <Moon className="h-4 w-4" />
-          ) : theme === "light" ? (
-            <Sun className="h-4 w-4" />
           ) : (
-            <Monitor className="h-4 w-4" />
+            <Sun className="h-4 w-4" />
           )}
           <span className="sr-only">Toggle theme</span>
       </DropdownMenuTrigger>
@@ -49,10 +48,6 @@ export function ThemeToggle() {
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           <Moon className="mr-2 h-4 w-4" />
           {t("dark")}
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Monitor className="mr-2 h-4 w-4" />
-          {t("system")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

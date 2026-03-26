@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Slan Chong | Full Stack Developer",
-    "description": "Portfolio of Slan Chong (Kitsunezu) — Full Stack Developer specializing in TypeScript, React, and cloud-native infrastructure."
+    "title": "Kitsunezu",
+    "description": "Portfolio of Slan Chong (Kitsunezu)"
   },
   "nav": {
     "about": "About",
@@ -15,7 +15,7 @@
     "greeting": "Hi, I'm",
     "name": "Slan Chong",
     "title": "Full Stack Developer",
-    "subtitle": "Building modern web experiences with TypeScript, React, and cloud-native technologies.",
+    "subtitle": "and this is my portfolio...",
     "cta_primary": "View My Work",
     "cta_secondary": "Get In Touch"
   },

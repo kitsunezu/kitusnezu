@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useMemo } from "react";
+import { Float, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 
 interface SkillOrbsProps {
@@ -15,7 +15,8 @@ interface OrbData {
   color: string;
   radius: number;
   speed: number;
-  offset: number;
+  rotationIntensity: number;
+  floatIntensity: number;
 }
 
 const ORB_COLORS = [
@@ -30,8 +31,6 @@ const ORB_COLORS = [
 ];
 
 export function SkillOrbs({ opacity, visible, isMobile }: SkillOrbsProps) {
-  const groupRef = useRef<THREE.Group>(null);
-
   const orbs: OrbData[] = useMemo(() => {
     const count = isMobile ? 6 : 12;
     return Array.from({ length: count }, (_, i) => {
@@ -45,54 +44,47 @@ export function SkillOrbs({ opacity, visible, isMobile }: SkillOrbsProps) {
         ] as [number, number, number],
         color: ORB_COLORS[i % ORB_COLORS.length],
         radius: 0.12 + Math.random() * 0.18,
-        speed: 0.3 + Math.random() * 0.5,
-        offset: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.8,
+        rotationIntensity: 0.2 + Math.random() * 0.4,
+        floatIntensity: 0.6 + Math.random() * 0.8,
       };
     });
   }, [isMobile]);
 
-  useFrame((state) => {
-    if (!groupRef.current) return;
-    const t = state.clock.elapsedTime;
-    groupRef.current.rotation.y = t * 0.05;
-  });
-
   if (!visible || opacity <= 0.01) return null;
 
   return (
-    <group ref={groupRef}>
+    <group>
+      <Sparkles
+        count={isMobile ? 20 : 40}
+        scale={9}
+        size={0.5}
+        speed={0.3}
+        opacity={opacity * 0.7}
+        color="#8b5cf6"
+      />
       {orbs.map((orb, i) => (
-        <FloatingOrb key={i} data={orb} opacity={opacity} />
+        <Float
+          key={i}
+          speed={orb.speed}
+          rotationIntensity={orb.rotationIntensity}
+          floatIntensity={orb.floatIntensity}
+        >
+          <mesh position={orb.position}>
+            <sphereGeometry args={[orb.radius, 16, 16]} />
+            <meshStandardMaterial
+              color={orb.color}
+              transparent
+              opacity={opacity * 0.75}
+              emissive={orb.color}
+              emissiveIntensity={0.8}
+              roughness={0.2}
+              metalness={0.5}
+              toneMapped={false}
+            />
+          </mesh>
+        </Float>
       ))}
     </group>
-  );
-}
-
-function FloatingOrb({ data, opacity }: { data: OrbData; opacity: number }) {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state) => {
-    if (!meshRef.current) return;
-    const t = state.clock.elapsedTime;
-    // Gentle floating
-    meshRef.current.position.y =
-      data.position[1] + Math.sin(t * data.speed + data.offset) * 0.4;
-    meshRef.current.position.x =
-      data.position[0] + Math.cos(t * data.speed * 0.7 + data.offset) * 0.2;
-  });
-
-  return (
-    <mesh ref={meshRef} position={data.position}>
-      <sphereGeometry args={[data.radius, 16, 16]} />
-      <meshStandardMaterial
-        color={data.color}
-        transparent
-        opacity={opacity * 0.7}
-        emissive={data.color}
-        emissiveIntensity={0.3}
-        roughness={0.3}
-        metalness={0.6}
-      />
-    </mesh>
   );
 }

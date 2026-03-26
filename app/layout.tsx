@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale, getMessages } from "next-intl/server";
 import { Providers } from "@/components/providers";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { BottomNav } from "@/components/layout/BottomNav";
+import { PageTransition } from "@/components/layout/PageTransition";
+import { ThreeBackground } from "@/components/three/ThreeBackground";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,9 +39,17 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground pb-16 md:pb-0">
         <Providers locale={locale} messages={messages as Record<string, unknown>}>
-          {children}
+          <ThreeBackground />
+          <Navbar />
+          <PageTransition>
+            <main className="flex-1">
+              {children}
+            </main>
+          </PageTransition>
+          <Footer />
+          <BottomNav />
         </Providers>
       </body>
     </html>

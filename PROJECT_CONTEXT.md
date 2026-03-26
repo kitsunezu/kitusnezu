@@ -1,4 +1,4 @@
-你現在是一位資深全端開發者，我要用 NextJS/React + TypeScript + Vite + Tailwind CSS + shadcn/ui + git來開發一個個人求職用的專業介紹網站（Portfolio / Personal Website）
+你現在是一位資深Full-Stack Developer，我要用 NextJS/React + TypeScript + Vite + Tailwind CSS + shadcn/ui + git來開發一個個人求職用的專業介紹網站（Portfolio / Personal Website）
 使用的技術都可以提出更好建議
 
 專案目標：
@@ -52,9 +52,9 @@
 未來希望能用 Docker + Nginx Proxy Manager 部署到我的 kitsunet.app 網域，結構要方便轉成 Docker Compose。
 
 我的個人特色：
-- 名字: Slan Chong(Kitsunezu)[請在這裡填入你的名字、目前職稱、擅長領域、個人風格等，例如：熱愛 TypeScript、喜歡乾淨極簡設計、有 Homelab 經驗、喜歡寫技術部落格等]
+- 名字: Slan Chong(Kitsunezu)
 - 職稱: Full Stack Developer
-- 個人SNS: https://x.com/slan1024 , 
+- 個人SNS: https://x.com/slan1024 , snchong.slan@gmail.com
 - 技能:
    - Languages: Java Spring Boot, TypeScript, JSP, Node.js
    - Frameworks: React, Next.js
@@ -62,6 +62,6 @@
    - Databases: Redis, Elasticsearch, OpenSearch
    - EDUCATION:
       - Feng Chia University | Bachelor of Science in Electronic Engineering | Aug 2017 – Aug 2021
-      - Lab Experience: Computational Analytics & Cognitive Vision Lab (Jan 2018 – June 2021)
+      - Lab Experience: Computational Analytics & Cognitive Vision Lab
          - Focused on data analysis, computer vision algorithms, and hardware-software integration
    - WORK EXPERIENCE: HKTVmall | Shoalter Technology Programmer (Full-Stack Developer) | July 2022

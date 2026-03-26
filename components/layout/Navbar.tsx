@@ -1,36 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const navSections = [
-  "about",
-  "experience",
-  "skills",
-  "projects",
-  "education",
-  "contact",
+const navItems = [
+  { href: "/about", key: "about" },
+  { href: "/experience", key: "experience" },
+  { href: "/skills", key: "skills" },
+  { href: "/projects", key: "projects" },
+  { href: "/education", key: "education" },
+  { href: "/contact", key: "contact" },
 ] as const;
 
 export function Navbar() {
   const t = useTranslations("nav");
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  function scrollTo(id: string) {
-    setMobileOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  }
 
   return (
     <header
@@ -41,64 +37,53 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-lg font-bold tracking-tight hover:text-primary/80 transition-colors"
+        <Link
+          href="/"
+          className="flex items-center gap-1.5 text-lg font-bold tracking-tight hover:text-primary/80 transition-colors"
         >
+          <span className="text-xl">🦊</span>
           Kitsunezu
-        </button>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
-          {navSections.map((section) => (
-            <Button
-              key={section}
-              variant="ghost"
-              size="sm"
-              onClick={() => scrollTo(section)}
-              className="text-sm font-medium"
-            >
-              {t(section)}
-            </Button>
-          ))}
+          {navItems.map(({ href, key }) => {
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={key}
+                href={href}
+                className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors
+                  ${isActive
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                  }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-indicator"
+                    className="absolute inset-0 rounded-md bg-accent"
+                    style={{ zIndex: -1 }}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {t(key)}
+              </Link>
+            );
+          })}
           <div className="ml-2 flex items-center gap-1">
             <ThemeToggle />
             <LanguageSwitcher />
           </div>
         </div>
 
-        {/* Mobile controls */}
+        {/* Mobile: only theme + language toggles (nav handled by BottomNav) */}
         <div className="flex md:hidden items-center gap-1">
           <ThemeToggle />
           <LanguageSwitcher />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-9 w-9"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-          </Button>
         </div>
       </nav>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-md">
-          <div className="flex flex-col px-4 py-3 gap-1">
-            {navSections.map((section) => (
-              <Button
-                key={section}
-                variant="ghost"
-                className="justify-start text-sm"
-                onClick={() => scrollTo(section)}
-              >
-                {t(section)}
-              </Button>
-            ))}
-          </div>
-        </div>
-      )}
     </header>
   );
 }
+
