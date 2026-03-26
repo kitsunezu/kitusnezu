@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "Slan Chong | 全端開發者",
+    "description": "Slan Chong（Kitsunezu）的個人作品集 — 專精 TypeScript、React 和雲原生基礎設施的全端開發者。"
+  },
+  "nav": {
+    "about": "關於我",
+    "experience": "工作經歷",
+    "skills": "技能",
+    "projects": "專案",
+    "education": "學歷",
+    "contact": "聯繫"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "Slan Chong",
+    "title": "全端開發者",
+    "subtitle": "使用 TypeScript、React 和雲原生技術打造現代化網頁體驗。",
+    "cta_primary": "查看作品",
+    "cta_secondary": "與我聯繫"
+  },
+  "about": {
+    "heading": "關於我",
+    "description": "我是一名全端開發者，熱衷於構建乾淨、可擴展的網頁應用。我喜歡在整個技術棧中工作 — 從使用 React 打造完美的 UI，到使用 Java Spring Boot 和 Node.js 設計穩健的後端系統。工作之餘，我經營自己的 Homelab，喜歡探索各種新技術。"
+  },
+  "experience": {
+    "heading": "工作經歷",
+    "present": "至今"
+  },
+  "skills": {
+    "heading": "技能",
+    "languages": "程式語言",
+    "frameworks": "框架",
+    "tools": "工具",
+    "databases": "資料庫"
+  },
+  "projects": {
+    "heading": "專案",
+    "view_source": "原始碼",
+    "view_live": "線上預覽"
+  },
+  "education": {
+    "heading": "學歷",
+    "lab": "實驗室經歷"
+  },
+  "contact": {
+    "heading": "與我聯繫",
+    "description": "我隨時歡迎新的機會與合作，歡迎隨時聯繫我！",
+    "email": "電子郵件",
+    "copy_email": "複製電子郵件"
+  },
+  "footer": {
+    "built_with": "使用 Next.js 和 React Three Fiber 建構",
+    "rights": "版權所有。"
+  },
+  "theme": {
+    "light": "亮色",
+    "dark": "暗色",
+    "system": "系統"
+  },
+  "language": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語"
+  }
+}

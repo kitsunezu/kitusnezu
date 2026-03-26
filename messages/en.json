@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "Slan Chong | Full Stack Developer",
+    "description": "Portfolio of Slan Chong (Kitsunezu) — Full Stack Developer specializing in TypeScript, React, and cloud-native infrastructure."
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Slan Chong",
+    "title": "Full Stack Developer",
+    "subtitle": "Building modern web experiences with TypeScript, React, and cloud-native technologies.",
+    "cta_primary": "View My Work",
+    "cta_secondary": "Get In Touch"
+  },
+  "about": {
+    "heading": "About Me",
+    "description": "I'm a Full Stack Developer with a passion for building clean, scalable web applications. I enjoy working across the stack — from crafting pixel-perfect UIs with React to designing robust backend systems with Java Spring Boot and Node.js. Outside of work, I run a homelab and love exploring new technologies."
+  },
+  "experience": {
+    "heading": "Experience",
+    "present": "Present"
+  },
+  "skills": {
+    "heading": "Skills",
+    "languages": "Languages",
+    "frameworks": "Frameworks",
+    "tools": "Tools",
+    "databases": "Databases"
+  },
+  "projects": {
+    "heading": "Projects",
+    "view_source": "Source",
+    "view_live": "Live Demo"
+  },
+  "education": {
+    "heading": "Education",
+    "lab": "Lab Experience"
+  },
+  "contact": {
+    "heading": "Get In Touch",
+    "description": "I'm always open to new opportunities and collaborations. Feel free to reach out!",
+    "email": "Email",
+    "copy_email": "Copy email"
+  },
+  "footer": {
+    "built_with": "Built with Next.js & React Three Fiber",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語"
+  }
+}

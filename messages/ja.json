@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "Slan Chong | フルスタック開発者",
+    "description": "Slan Chong（Kitsunezu）のポートフォリオ — TypeScript、React、クラウドネイティブ技術を専門とするフルスタック開発者。"
+  },
+  "nav": {
+    "about": "自己紹介",
+    "experience": "職歴",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "education": "学歴",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "greeting": "こんにちは、",
+    "name": "Slan Chong",
+    "title": "フルスタック開発者",
+    "subtitle": "TypeScript、React、クラウドネイティブ技術でモダンなウェブ体験を構築しています。",
+    "cta_primary": "作品を見る",
+    "cta_secondary": "お問い合わせ"
+  },
+  "about": {
+    "heading": "自己紹介",
+    "description": "クリーンでスケーラブルなウェブアプリケーションの構築に情熱を注ぐフルスタック開発者です。ReactによるピクセルパーフェクトなUI構築から、Java Spring BootやNode.jsによる堅牢なバックエンドシステムの設計まで、スタック全体で働くことを楽しんでいます。仕事以外では、自宅サーバーを運用し、新しい技術の探求を楽しんでいます。"
+  },
+  "experience": {
+    "heading": "職歴",
+    "present": "現在"
+  },
+  "skills": {
+    "heading": "スキル",
+    "languages": "プログラミング言語",
+    "frameworks": "フレームワーク",
+    "tools": "ツール",
+    "databases": "データベース"
+  },
+  "projects": {
+    "heading": "プロジェクト",
+    "view_source": "ソースコード",
+    "view_live": "ライブデモ"
+  },
+  "education": {
+    "heading": "学歴",
+    "lab": "研究室経歴"
+  },
+  "contact": {
+    "heading": "お問い合わせ",
+    "description": "新しい機会やコラボレーションをいつでも歓迎しています。お気軽にご連絡ください！",
+    "email": "メール",
+    "copy_email": "メールをコピー"
+  },
+  "footer": {
+    "built_with": "Next.js と React Three Fiber で構築",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システム"
+  },
+  "language": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語"
+  }
+}
