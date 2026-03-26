@@ -15,12 +15,13 @@
     "greeting": "こんにちは、",
     "name": "Slan Chong",
     "title": "フルスタック開発者",
-    "subtitle": "and this is my portfolio...",
+    "subtitle": "ようこそ、私のポートフォリオへ！",
     "cta_primary": "作品を見る",
     "cta_secondary": "お問い合わせ"
   },
   "about": {
     "heading": "自己紹介",
+    "homelab_caption": "サーバー構成",
     "description": "クリーンでスケーラブルなウェブアプリケーションの構築に情熱を注ぐフルスタック開発者です。ReactによるピクセルパーフェクトなUI構築から、Java Spring BootやNode.jsによる堅牢なバックエンドシステムの設計まで、スタック全体で働くことを楽しんでいます。仕事以外では、自宅サーバーを運用し、新しい技術の探求を楽しんでいます。"
   },
   "experience": {

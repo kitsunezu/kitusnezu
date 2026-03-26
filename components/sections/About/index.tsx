@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface AboutProps {
   bio: string;
@@ -29,6 +30,27 @@ export function About({ bio }: AboutProps) {
         >
           {bio}
         </motion.p>
+
+        <motion.figure
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-12"
+        >
+          <div className="overflow-hidden rounded-xl border border-border/50 shadow-lg">
+            <Image
+              src="/homelab.png"
+              alt="Homelab infrastructure diagram"
+              width={1080}
+              height={607}
+              className="w-full h-auto"
+              priority={false}
+            />
+          </div>
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground/70">
+            {t("homelab_caption")}
+          </figcaption>
+        </motion.figure>
       </div>
     </section>
   );

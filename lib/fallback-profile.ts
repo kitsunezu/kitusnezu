@@ -39,12 +39,12 @@ export const fallbackProfile: Profile = {
         ja: "香港",
       },
       startDate: "2022-07",
-      endDate: null,
+      endDate: "2026-02",
       description: {
-        en: "Full-stack developer for Hong Kong's largest online shopping mall (HKTVmall), building core e-commerce features using SAP Hybris, Java Spring Boot, React, and cloud-native tools.",
+        en: "Full-stack developer for Hong Kong's largest online shopping mall (HKTVmall), building core e-commerce features using SAP Hybris, Java Spring Boot, and React.",
         "zh-TW":
-          "為香港最大網購平台 HKTVmall 開發核心電商功能，使用 SAP Hybris、Java Spring Boot、React 及雲原生技術。",
-        ja: "香港最大のオンラインショッピングモール HKTVmall のコア EC 機能を、SAP Hybris・Java Spring Boot・React・クラウドネイティブツールで開発。",
+          "為香港最大網購平台 HKTVmall 開發核心電商功能，使用 SAP Hybris、Java Spring Boot 及 React。",
+        ja: "香港最大のオンラインショッピングモール HKTVmall のコア EC 機能を、SAP Hybris・Java Spring Boot・React で開発。",
       },
       highlights: [
         {
@@ -71,11 +71,6 @@ export const fallbackProfile: Profile = {
           en: "HKTVmall Cashback: Deployed WebViews compatible across Mobile App and Web, ensuring UI/UX consistency",
           "zh-TW": "HKTVmall 現金回饋：部署兼容 App 和 Web 的 WebView，確保 UI/UX 一致性",
           ja: "HKTVmall キャッシュバック：モバイルアプリと Web の両環境に対応した WebView を導入し UI/UX の一貫性を確保",
-        },
-        {
-          en: "Implemented CI/CD pipelines with ArgoCD and Docker",
-          "zh-TW": "使用 ArgoCD 和 Docker 實施 CI/CD 流水線",
-          ja: "ArgoCD と Docker による CI/CD パイプラインの実装",
         },
       ],
     },

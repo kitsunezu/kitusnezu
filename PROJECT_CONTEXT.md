@@ -64,4 +64,4 @@
       - Feng Chia University | Bachelor of Science in Electronic Engineering | Aug 2017 – Aug 2021
       - Lab Experience: Computational Analytics & Cognitive Vision Lab
          - Focused on data analysis, computer vision algorithms, and hardware-software integration
-   - WORK EXPERIENCE: HKTVmall | Shoalter Technology Programmer (Full-Stack Developer) | July 2022
+   - WORK EXPERIENCE: HKTVmall | Shoalter Technology Programmer (Full-Stack Developer) | July 2022 – Feb 2026
