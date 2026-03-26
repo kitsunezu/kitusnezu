@@ -1,6 +1,6 @@
 services:
   portfolio:
-    image: ghcr.io/slan1024/kitsunezu-portfolio:latest
+    image: ghcr.io/kitsunezu/kitsunezu-portfolio:latest
     container_name: kitsunezu-portfolio
     restart: unless-stopped
     ports:
