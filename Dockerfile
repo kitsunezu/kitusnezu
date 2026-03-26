@@ -2,7 +2,7 @@
 FROM node:22-slim AS deps
 WORKDIR /app
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm install --no-audit --prefer-offline
 
 # Stage 2: Build the application
 FROM node:22-slim AS builder
