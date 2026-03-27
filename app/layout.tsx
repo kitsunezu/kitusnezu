@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Slan Chong | Full Stack Developer",
+  title: "Kitsunezu",
   description:
     "Portfolio of Slan Chong (Kitsunezu) — Full Stack Developer specializing in TypeScript, React, and cloud-native infrastructure.",
 };
