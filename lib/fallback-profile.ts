@@ -106,10 +106,10 @@ export const fallbackProfile: Profile = {
     {
       name: "Kitsunezu Portfolio",
       description: {
-        en: "Personal portfolio website built with Next.js, React Three Fiber, and Framer Motion. Features multi-language support, dark/light mode, and interactive 3D backgrounds. Deployed via Docker and GitHub Actions CI/CD.",
+        en: "Personal portfolio website built with Next.js, React Three Fiber, and Framer Motion. Deployed via Docker and GitHub Actions CI/CD.",
         "zh-TW":
-          "以 Next.js、React Three Fiber 和 Framer Motion 打造的個人作品集網站。支援多語言、明暗模式，並搭配互動式 3D 背景。透過 Docker 和 GitHub Actions CI/CD 自動化部署。",
-        ja: "Next.js・React Three Fiber・Framer Motion で構築した個人ポートフォリオサイト。多言語対応、ダーク/ライトモード、インタラクティブな 3D 背景を搭載。Docker と GitHub Actions CI/CD で自動デプロイ。",
+          "以 Next.js、React Three Fiber 和 Framer Motion 打造的個人作品集網站。透過 Docker 和 GitHub Actions CI/CD 自動化部署。",
+        ja: "Next.js・React Three Fiber・Framer Motion で構築した個人ポートフォリオサイト。Docker と GitHub Actions CI/CD で自動デプロイ。",
       },
       url: "https://kitsunezu.com",
       sourceUrl: "https://github.com/kitsunezu/kitusnezu",
