@@ -6,7 +6,6 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { useTheme } from "next-themes";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { AuroraBackground } from "./AuroraBackground";
 import { InteractiveStars } from "./InteractiveStars";
 import { SunBackground } from "./SunBackground";
 import { LowPolyBg } from "./LowPolyBg";
@@ -37,14 +36,11 @@ export function GlobalCanvas() {
 
           {/* Hero background — theme-aware */}
           {isDark ? (
-            <>
-              <AuroraBackground opacity={heroOpacity} />
-              <InteractiveStars
-                count={isMobile ? 1000 : 3000}
-                isMobile={isMobile}
-                opacity={heroOpacity}
-              />
-            </>
+            <InteractiveStars
+              count={isMobile ? 1000 : 3000}
+              isMobile={isMobile}
+              opacity={heroOpacity}
+            />
           ) : (
             <SunBackground opacity={heroOpacity} />
           )}

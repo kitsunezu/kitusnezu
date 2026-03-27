@@ -1,5 +1,5 @@
 import { getRequestConfig } from "next-intl/server";
-import { cookies, headers } from "next/headers";
+import { cookies } from "next/headers";
 
 const locales = ["en", "zh-TW", "ja"] as const;
 type Locale = (typeof locales)[number];
@@ -18,32 +18,7 @@ export default getRequestConfig(async () => {
     };
   }
 
-  // 2. Check Accept-Language header
-  const headerStore = await headers();
-  const acceptLang = headerStore.get("accept-language") ?? "";
-  const preferred = acceptLang
-    .split(",")
-    .map((part) => part.split(";")[0].trim())
-    .find((lang) => {
-      if (isValidLocale(lang)) return true;
-      const prefix = lang.split("-")[0];
-      return locales.some((l) => l.startsWith(prefix));
-    });
-
-  if (preferred) {
-    const matched =
-      locales.find((l) => l === preferred) ??
-      locales.find((l) => l.startsWith(preferred.split("-")[0]));
-    if (matched) {
-      return {
-        locale: matched,
-        timeZone: "Asia/Taipei",
-        messages: (await import(`../messages/${matched}.json`)).default,
-      };
-    }
-  }
-
-  // 3. Default to English
+  // 2. Default to English
   const defaultLocale = "en";
   return {
     locale: defaultLocale,
