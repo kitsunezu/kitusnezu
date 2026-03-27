@@ -133,9 +133,9 @@
     background:
       linear-gradient(
         to bottom,
-        #fcd34d 0%,    /* amber-300  */
-        #fb923c 50%,   /* orange-400 */
-        #fb7185 100%   /* rose-400   */
+        #fde68a 0%,    /* amber-200  */
+        #fdba74 50%,   /* orange-300 */
+        #fda4af 100%   /* rose-300   */
       ) fixed;
   }
   html {
