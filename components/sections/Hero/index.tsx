@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,26 @@ interface HeroProps {
 
 export function Hero({ name, title }: HeroProps) {
   const t = useTranslations("hero");
+  const [displayedName, setDisplayedName] = useState("");
+  const [typingDone, setTypingDone] = useState(false);
+
+  useEffect(() => {
+    setDisplayedName("");
+    setTypingDone(false);
+    let index = 0;
+    const startTimer = setTimeout(() => {
+      const interval = setInterval(() => {
+        index++;
+        setDisplayedName(name.slice(0, index));
+        if (index >= name.length) {
+          clearInterval(interval);
+          setTypingDone(true);
+        }
+      }, 80);
+      return () => clearInterval(interval);
+    }, 300);
+    return () => clearTimeout(startTimer);
+  }, [name]);
 
   return (
     <section
@@ -28,14 +49,20 @@ export function Hero({ name, title }: HeroProps) {
         >
           {t("greeting")}
         </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-2 text-5xl font-bold tracking-tight sm:text-7xl"
-        >
-          {name}
-        </motion.h1>
+        <h1 className="mt-2 text-5xl font-bold tracking-tight sm:text-7xl">
+          {displayedName}
+          <motion.span
+            animate={typingDone ? { opacity: 0 } : { opacity: [1, 0, 1] }}
+            transition={
+              typingDone
+                ? { duration: 0.3, delay: 1.5 }
+                : { repeat: Infinity, duration: 0.8, ease: "linear" }
+            }
+            className="ml-1 inline-block"
+          >
+            |
+          </motion.span>
+        </h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
