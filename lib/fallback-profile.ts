@@ -20,6 +20,11 @@ export const fallbackProfile: Profile = {
       url: "https://x.com/slan1024",
       label: "@slan1024",
     },
+    {
+      platform: "GitHub",
+      url: "https://github.com/kitsunezu",
+      label: "kitsunezu",
+    },
   ],
   experience: [
     {
