@@ -132,6 +132,17 @@ export const fallbackProfile: Profile = {
       sourceUrl: "https://github.com/kitsunezu/github-profile",
       tags: ["React", "TypeScript", "GitHub API", "Netlify"],
     },
+    {
+      name: "YouNoter",
+      description: {
+        en: "A Flutter desktop app for monitoring and managing YouTube Live chat in real time — no API key required. Features Super Chat tracking, viewer profiles, analytics dashboard, membership events, and multi-language UI.",
+        "zh-TW":
+          "一款 Flutter 桌面應用程式，用於即時監控和管理 YouTube 直播聊天室 — 無需 API 金鑰。支援 Super Chat 追蹤、觀眾檔案、數據分析儀表板、會員活動及多語言介面。",
+        ja: "YouTube ライブチャットをリアルタイムで監視・管理する Flutter デスクトップアプリ — API キー不要。スーパーチャット追跡、視聴者プロフィール、分析ダッシュボード、メンバーシップイベント、多言語 UI に対応。",
+      },
+      sourceUrl: "https://github.com/kitsunezu/younoter-livechat",
+      tags: ["Flutter", "Dart", "Riverpod", "Drift", "SQLite", "YouTube API"],
+    },
   ],
   skills: [
     {
