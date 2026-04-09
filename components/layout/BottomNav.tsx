@@ -9,7 +9,6 @@ import {
   Briefcase,
   Zap,
   FolderOpen,
-  GraduationCap,
   Mail,
 } from "lucide-react";
 
@@ -18,7 +17,6 @@ const navItems = [
   { href: "/experience", key: "experience", Icon: Briefcase },
   { href: "/skills", key: "skills", Icon: Zap },
   { href: "/projects", key: "projects", Icon: FolderOpen },
-  { href: "/education", key: "education", Icon: GraduationCap },
   { href: "/contact", key: "contact", Icon: Mail },
 ] as const;
 

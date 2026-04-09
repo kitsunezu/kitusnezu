@@ -1,7 +1,5 @@
-import { Education } from "@/components/sections/Education";
-import { getEducationData } from "@/lib/page-data";
+import { redirect } from "next/navigation";
 
-export default async function EducationPage() {
-  const items = await getEducationData();
-  return <Education items={items} />;
+export default function EducationPage() {
+  redirect("/experience");
 }

@@ -5,10 +5,9 @@
   },
   "nav": {
     "about": "自己紹介",
-    "experience": "職歴",
+    "experience": "経歴",
     "skills": "スキル",
     "projects": "プロジェクト",
-    "education": "学歴",
     "contact": "お問い合わせ"
   },
   "hero": {

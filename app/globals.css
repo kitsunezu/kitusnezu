@@ -128,17 +128,17 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   }
-  /* Light mode: autumn maple gradient */
-  html:not(.dark) body {
-    background:
-      linear-gradient(
-        to bottom,
-        #fde68a 0%,    /* amber-200  */
-        #fdba74 50%,   /* orange-300 */
-        #fda4af 100%   /* rose-300   */
-      ) fixed;
-  }
   html {
     @apply font-sans;
   }
+}
+
+/* ── Light-mode sky pre-fill (outside @layer so it beats utilities) ─────────
+   Sets the sky gradient on <html> before Three.js canvas loads, and makes
+   <body> transparent so the sky colour shows through immediately.          */
+html:not(.dark) {
+  background: linear-gradient(to bottom, #8ca6c2 0%, #dbe6f2 100%) fixed;
+}
+html:not(.dark) body {
+  background-color: transparent;
 }

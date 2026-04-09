@@ -5,10 +5,9 @@
   },
   "nav": {
     "about": "關於我",
-    "experience": "工作經歷",
+    "experience": "經歷",
     "skills": "技能",
     "projects": "專案",
-    "education": "學歷",
     "contact": "聯繫"
   },
   "hero": {
@@ -25,7 +24,7 @@
     "description": "我是一名Full-Stack Developer，熱衷於構建乾淨、可擴展的網頁應用。我喜歡在整個技術棧中工作 — 從使用 React 打造完美的 UI，到使用 Java Spring Boot 和 Node.js 設計穩健的後端系統。工作之餘，我經營自己的 Homelab，喜歡探索各種新技術。"
   },
   "experience": {
-    "heading": "工作經歷",
+    "heading": "經歷",
     "present": "至今"
   },
   "skills": {

@@ -1,7 +1,10 @@
 import { Experience } from "@/components/sections/Experience";
-import { getExperienceData } from "@/lib/page-data";
+import { getExperienceData, getEducationData } from "@/lib/page-data";
 
 export default async function ExperiencePage() {
-  const items = await getExperienceData();
-  return <Experience items={items} />;
+  const [items, educationItems] = await Promise.all([
+    getExperienceData(),
+    getEducationData(),
+  ]);
+  return <Experience items={items} educationItems={educationItems} />;
 }
