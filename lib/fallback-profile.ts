@@ -143,6 +143,18 @@ export const fallbackProfile: Profile = {
       sourceUrl: "https://github.com/kitsunezu/younoter-livechat",
       tags: ["Flutter", "Dart", "Riverpod", "Drift", "SQLite", "YouTube API"],
     },
+    {
+      name: "Voiceprint Search",
+      description: {
+        en: "A self-hosted speaker identification platform for enrolling voices, verifying clips, and searching a database for the closest speaker match. Docker-first stack with a Next.js frontend, FastAPI inference service, PostgreSQL with pgvector, Redis, and MinIO.",
+        "zh-TW":
+          "自架式聲紋辨識平台，支援聲紋註冊、語音驗證及聲紋資料庫搜尋比對。採用 Docker 架構，包含 Next.js 前端、FastAPI 推論服務、PostgreSQL（pgvector）、Redis 及 MinIO。",
+        ja: "声紋登録・音声照合・話者検索を行うセルフホスト型話者識別プラットフォーム。Next.js フロントエンド、FastAPI 推論サービス、PostgreSQL（pgvector）、Redis、MinIO による Docker ファーストなスタック構成。",
+      },
+      url: "https://voiceprint.kitsunezu.com/",
+      sourceUrl: "https://github.com/kitsunezu/voiceprint-search",
+      tags: ["Next.js", "FastAPI", "Python", "PostgreSQL", "pgvector", "Docker", "Redis", "MinIO"],
+    },
   ],
   skills: [
     {
