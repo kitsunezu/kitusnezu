@@ -144,6 +144,17 @@ export const fallbackProfile: Profile = {
       tags: ["Flutter", "Dart", "Riverpod", "Drift", "SQLite", "YouTube API"],
     },
     {
+      name: "Eventernote Dashboard",
+      description: {
+        en: "A personal event schedule dashboard for Eventernote users. Features timeline and list views, live countdown, category filtering, ICS/JSON import-export, PNG export, dark/light theme, multilingual UI, and a full CRUD admin page. Deployed via Docker with an Nginx Alpine web server.",
+        "zh-TW":
+          "Eventernote 用戶的個人活動排程儀表板。支援時間軸與清單視圖、即時倒數計時、分類篩選、ICS/JSON 匯入匯出、PNG 截圖匯出、深色/淺色主題、多語言介面及完整 CRUD 管理頁面。透過 Docker 搭配 Nginx Alpine 部署。",
+        ja: "Eventernote ユーザー向けの個人イベントスケジュールダッシュボード。タイムライン・リストビュー、ライブカウントダウン、カテゴリフィルタリング、ICS/JSON インポート・エクスポート、PNG エクスポート、ダーク/ライトテーマ、多言語 UI、フル CRUD 管理ページに対応。Docker と Nginx Alpine でデプロイ。",
+      },
+      sourceUrl: "https://github.com/kitsunezu/eventernote-dashboard",
+      tags: ["React", "TypeScript", "Vite", "Zustand", "Zod", "Docker", "Nginx"],
+    },
+    {
       name: "Voiceprint Search",
       description: {
         en: "A self-hosted speaker identification platform for enrolling voices, verifying clips, and searching a database for the closest speaker match. Docker-first stack with a Next.js frontend, FastAPI inference service, PostgreSQL with pgvector, Redis, and MinIO.",
