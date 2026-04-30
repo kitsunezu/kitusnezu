@@ -146,13 +146,14 @@ export const fallbackProfile: Profile = {
     {
       name: "Eventernote Dashboard",
       description: {
-        en: "A personal event schedule dashboard for Eventernote users. Features timeline and list views, live countdown, category filtering, ICS/JSON import-export, PNG export, dark/light theme, multilingual UI, and a full CRUD admin page. Deployed via Docker with an Nginx Alpine web server.",
+        en: "A React and TypeScript viewer for public Eventernote schedules. Enter an Eventernote user ID, fetch that user's public events through a local proxy, and browse them in a timeline dashboard with day grouping, a countdown to the next event, and a details drawer. Served via Docker with Nginx.",
         "zh-TW":
-          "Eventernote 用戶的個人活動排程儀表板。支援時間軸與清單視圖、即時倒數計時、分類篩選、ICS/JSON 匯入匯出、PNG 截圖匯出、深色/淺色主題、多語言介面及完整 CRUD 管理頁面。透過 Docker 搭配 Nginx Alpine 部署。",
-        ja: "Eventernote ユーザー向けの個人イベントスケジュールダッシュボード。タイムライン・リストビュー、ライブカウントダウン、カテゴリフィルタリング、ICS/JSON インポート・エクスポート、PNG エクスポート、ダーク/ライトテーマ、多言語 UI、フル CRUD 管理ページに対応。Docker と Nginx Alpine でデプロイ。",
+          "以 React 和 TypeScript 打造的 Eventernote 公開行程檢視器。輸入 Eventernote 使用者 ID，透過本地代理抓取其公開活動，並以時間軸介面瀏覽，支援依日期分組、下一場活動倒數計時及活動詳情側滑面板。透過 Docker 搭配 Nginx 部署。",
+        ja: "React と TypeScript で構築した Eventernote 公開スケジュールビューアー。Eventernote ユーザー ID を入力してローカルプロキシ経由でイベントを取得し、日別グループ化・次イベントカウントダウン・詳細ドロワーを備えたタイムラインダッシュボードで閲覧可能。Docker と Nginx でデプロイ。",
       },
+      url: "https://event.kitsunet.app/",
       sourceUrl: "https://github.com/kitsunezu/eventernote-dashboard",
-      tags: ["React", "TypeScript", "Vite", "Zustand", "Zod", "Docker", "Nginx"],
+      tags: ["React", "TypeScript", "Vite", "Zustand", "Docker", "Nginx"],
     },
     {
       name: "Voiceprint Search",
