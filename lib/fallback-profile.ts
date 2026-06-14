@@ -133,6 +133,17 @@ export const fallbackProfile: Profile = {
       tags: ["React", "TypeScript", "GitHub API", "Netlify"],
     },
     {
+      name: "Toyoko Inn Monitor",
+      description: {
+        en: "A Windows desktop application that monitors Toyoko Inn room prices in real time, supports multi-task searches and date-range scans, and alerts you when rates drop to your target price.",
+        "zh-TW":
+          "一款 Windows 桌面應用程式，可即時監控東橫 INN 房價，支援多任務搜尋與日期區間掃描，並在價格降到目標預算時發送通知。",
+        ja: "東横INNの客室料金をリアルタイムで監視し、複数タスク検索や日付範囲スキャンに対応し、目標価格まで下がると通知する Windows デスクトップアプリ。",
+      },
+      sourceUrl: "https://github.com/kitsunezu/toyoko-inn-monitor",
+      tags: ["Flutter", "Dart", "Riverpod", "Drift", "SQLite", "Windows Desktop"],
+    },
+    {
       name: "YouNoter",
       description: {
         en: "A Flutter desktop app for monitoring and managing YouTube Live chat in real time — no API key required. Features Super Chat tracking, viewer profiles, analytics dashboard, membership events, and multi-language UI.",
