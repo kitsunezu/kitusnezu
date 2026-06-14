@@ -6,5 +6,5 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Deployment
 
-- Pushes to `master` run `.github/workflows/deploy.yml`, build and push `ghcr.io/kitsunezu/kitsunezu-portfolio`, then trigger the Portainer redeploy webhook stored in the `PORTAINER_WEBHOOK_URL` GitHub secret.
-- Keep the Portainer webhook URL in GitHub Actions secrets only; do not commit it.
+- Pushes to `master` run `.github/workflows/deploy.yml`, build and push `ghcr.io/kitsunezu/kitsunezu-portfolio`, then call the Portainer API to redeploy stack `34` on endpoint `3`.
+- Keep the Portainer API key in the `PORTAINER_API_KEY` GitHub Actions secret only; do not commit it.

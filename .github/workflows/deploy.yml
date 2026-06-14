@@ -49,11 +49,19 @@ jobs:
 
       - name: Trigger Portainer redeploy
         env:
-          PORTAINER_WEBHOOK_URL: ${{ secrets.PORTAINER_WEBHOOK_URL }}
+          PORTAINER_API_KEY: ${{ secrets.PORTAINER_API_KEY }}
+          PORTAINER_BASE_URL: https://portainer.kitsunet.app
+          PORTAINER_STACK_ID: "34"
+          PORTAINER_ENDPOINT_ID: "3"
         run: |
-          if [ -z "$PORTAINER_WEBHOOK_URL" ]; then
-            echo "::error::PORTAINER_WEBHOOK_URL secret is not configured"
+          if [ -z "$PORTAINER_API_KEY" ]; then
+            echo "::error::PORTAINER_API_KEY secret is not configured"
             exit 1
           fi
 
-          curl --fail --silent --show-error --request POST "$PORTAINER_WEBHOOK_URL"
+          curl --fail-with-body --silent --show-error \
+            --request PUT \
+            --header "X-API-Key: $PORTAINER_API_KEY" \
+            --header "Content-Type: application/json" \
+            --data '{"RepullImageAndRedeploy":true}' \
+            "$PORTAINER_BASE_URL/api/stacks/$PORTAINER_STACK_ID/git/redeploy?endpointId=$PORTAINER_ENDPOINT_ID"
