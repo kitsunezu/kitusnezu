@@ -47,4 +47,13 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      # Portainer deploy is handled externally via scheduled polling; webhook step removed.
+      - name: Trigger Portainer redeploy
+        env:
+          PORTAINER_WEBHOOK_URL: ${{ secrets.PORTAINER_WEBHOOK_URL }}
+        run: |
+          if [ -z "$PORTAINER_WEBHOOK_URL" ]; then
+            echo "::error::PORTAINER_WEBHOOK_URL secret is not configured"
+            exit 1
+          fi
+
+          curl --fail --silent --show-error --request POST "$PORTAINER_WEBHOOK_URL"
