@@ -162,7 +162,7 @@ export const fallbackProfile: Profile = {
           "以 React 和 TypeScript 打造的 Eventernote 公開行程檢視器。輸入 Eventernote 使用者 ID，透過本地代理抓取其公開活動，並以時間軸介面瀏覽，支援依日期分組、下一場活動倒數計時及活動詳情側滑面板。透過 Docker 搭配 Nginx 部署。",
         ja: "React と TypeScript で構築した Eventernote 公開スケジュールビューアー。Eventernote ユーザー ID を入力してローカルプロキシ経由でイベントを取得し、日別グループ化・次イベントカウントダウン・詳細ドロワーを備えたタイムラインダッシュボードで閲覧可能。Docker と Nginx でデプロイ。",
       },
-      url: "https://event.kitsunet.app/",
+      url: "https://event.kitsunezu.com/",
       sourceUrl: "https://github.com/kitsunezu/eventernote-dashboard",
       tags: ["React", "TypeScript", "Vite", "Zustand", "Docker", "Nginx"],
     },
