@@ -118,6 +118,11 @@ function SkyPlane({ opacity }: { opacity: number }) {
 const WIND_X = -0.022;   // slight wind to the left
 const STREAK = 0.22;     // streak length in world units
 
+function pseudoRandom(seed: number) {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+}
+
 function RainLayer({
   count,
   speedBase,
@@ -139,10 +144,11 @@ function RainLayer({
     const vel = new Float32Array(count);
 
     for (let i = 0; i < count; i++) {
-      const x = (Math.random() - 0.5) * 24;
-      const y = (Math.random() - 0.5) * 14;
-      const z = zPos + (Math.random() - 0.5) * 0.4;
-      const speed = speedBase + Math.random() * speedRange;
+      const seed = i * 4 + Math.round((zPos + 2) * 10_000);
+      const x = (pseudoRandom(seed) - 0.5) * 24;
+      const y = (pseudoRandom(seed + 1) - 0.5) * 14;
+      const z = zPos + (pseudoRandom(seed + 2) - 0.5) * 0.4;
+      const speed = speedBase + pseudoRandom(seed + 3) * speedRange;
 
       pos[i * 6 + 0] = x;
       pos[i * 6 + 1] = y;

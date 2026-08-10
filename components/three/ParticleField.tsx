@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -9,13 +9,17 @@ interface ParticleFieldProps {
   count: number;
 }
 
+function pseudoRandom(seed: number) {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+}
+
 export function ParticleField({ opacity, count }: ParticleFieldProps) {
   const meshRef = useRef<THREE.Points>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
 
   // Track mouse for parallax
-  useMemo(() => {
-    if (typeof window === "undefined") return;
+  useEffect(() => {
     const handler = (e: MouseEvent) => {
       mouseRef.current.x = (e.clientX / window.innerWidth - 0.5) * 2;
       mouseRef.current.y = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -28,10 +32,10 @@ export function ParticleField({ opacity, count }: ParticleFieldProps) {
     const pos = new Float32Array(count * 3);
     const sz = new Float32Array(count);
     for (let i = 0; i < count; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 20;
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 20;
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 15;
-      sz[i] = Math.random() * 2 + 0.5;
+      pos[i * 3] = (pseudoRandom(i * 4 + 1) - 0.5) * 20;
+      pos[i * 3 + 1] = (pseudoRandom(i * 4 + 2) - 0.5) * 20;
+      pos[i * 3 + 2] = (pseudoRandom(i * 4 + 3) - 0.5) * 15;
+      sz[i] = pseudoRandom(i * 4 + 4) * 2 + 0.5;
     }
     return { positions: pos, sizes: sz };
   }, [count]);

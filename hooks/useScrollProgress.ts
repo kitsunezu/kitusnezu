@@ -37,10 +37,11 @@ export function useScrollProgress(): SectionProgress {
   }, []);
 
   useEffect(() => {
-    calculate();
+    const frame = window.requestAnimationFrame(calculate);
     window.addEventListener("scroll", calculate, { passive: true });
     window.addEventListener("resize", calculate, { passive: true });
     return () => {
+      window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", calculate);
       window.removeEventListener("resize", calculate);
     };

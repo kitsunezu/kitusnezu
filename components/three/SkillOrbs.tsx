@@ -2,7 +2,6 @@
 
 import { useMemo } from "react";
 import { Float, Sparkles } from "@react-three/drei";
-import * as THREE from "three";
 
 interface SkillOrbsProps {
   opacity: number;
@@ -30,23 +29,29 @@ const ORB_COLORS = [
   "#ec4899", // pink
 ];
 
+function pseudoRandom(seed: number) {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+}
+
 export function SkillOrbs({ opacity, visible, isMobile }: SkillOrbsProps) {
   const orbs: OrbData[] = useMemo(() => {
     const count = isMobile ? 6 : 12;
     return Array.from({ length: count }, (_, i) => {
       const angle = (i / count) * Math.PI * 2;
-      const radius = 2.5 + Math.random() * 1.5;
+      const seed = i * 5 + count;
+      const radius = 2.5 + pseudoRandom(seed) * 1.5;
       return {
         position: [
           Math.cos(angle) * radius,
-          (Math.random() - 0.5) * 3,
+          (pseudoRandom(seed + 1) - 0.5) * 3,
           Math.sin(angle) * radius - 3,
         ] as [number, number, number],
         color: ORB_COLORS[i % ORB_COLORS.length],
-        radius: 0.12 + Math.random() * 0.18,
-        speed: 0.4 + Math.random() * 0.8,
-        rotationIntensity: 0.2 + Math.random() * 0.4,
-        floatIntensity: 0.6 + Math.random() * 0.8,
+        radius: 0.12 + pseudoRandom(seed + 2) * 0.18,
+        speed: 0.4 + pseudoRandom(seed + 3) * 0.8,
+        rotationIntensity: 0.2 + pseudoRandom(seed + 4) * 0.4,
+        floatIntensity: 0.6 + pseudoRandom(seed + 5) * 0.8,
       };
     });
   }, [isMobile]);

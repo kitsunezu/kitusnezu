@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,13 +12,17 @@ import {
 
 const locales = ["en", "zh-TW", "ja"] as const;
 
+function setLocaleCookie(locale: string) {
+  document.cookie = `NEXT_LOCALE=${locale};path=/;max-age=31536000;SameSite=Lax`;
+}
+
 export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const t = useTranslations("language");
 
   function switchLocale(newLocale: string) {
-    document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
+    setLocaleCookie(newLocale);
     router.refresh();
   }
 
