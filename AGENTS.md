@@ -16,3 +16,4 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Keep `next` and `eslint-config-next` pinned to the same exact version, and validate upgrades with `npm ci`, `npm run lint`, and `npm run build`.
 - `sharp` is an explicit production dependency for the standalone `next/image` runtime; keep it pinned to a patched release and verify the final image with Trivy.
 - Docker build and runner stages use digest-pinned Node.js 24 LTS images. Refresh the official `node:24-slim` and `node:24-alpine` digests deliberately when updating base-image security fixes.
+- The production runner intentionally removes npm, npx, and Yarn; `node server.js` is the only runtime entrypoint.

@@ -17,6 +17,22 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
+RUN rm -rf \
+      /opt/yarn-v${YARN_VERSION} \
+      /root/.cache/yarn \
+      /root/.npm \
+      /usr/local/lib/node_modules/npm \
+    && rm -f \
+      /usr/local/bin/npm \
+      /usr/local/bin/npx \
+      /usr/local/bin/yarn \
+      /usr/local/bin/yarnpkg \
+    && ! command -v npm \
+    && ! command -v npx \
+    && ! command -v yarn \
+    && ! command -v yarnpkg \
+    && node --version
+
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
