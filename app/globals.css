@@ -147,3 +147,22 @@ html:not(.dark) {
 html:not(.dark) body {
   background-color: transparent;
 }
+
+@keyframes page-enter {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+main > section {
+  animation: page-enter 160ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > section {
+    animation: none;
+  }
+}
