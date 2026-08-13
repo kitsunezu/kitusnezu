@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Link, { useLinkStatus } from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -15,6 +14,24 @@ const navItems = [
   { href: "/projects", key: "projects" },
   { href: "/contact", key: "contact" },
 ] as const;
+
+function NavItem({ label, active }: { label: string; active: boolean }) {
+  const { pending } = useLinkStatus();
+
+  return (
+    <>
+      {(active || pending) && (
+        <span
+          aria-hidden="true"
+          className={`absolute inset-0 -z-10 rounded-md ${
+            active ? "bg-accent" : "bg-accent/60"
+          }`}
+        />
+      )}
+      <span className={pending ? "opacity-70" : undefined}>{label}</span>
+    </>
+  );
+}
 
 export function Navbar() {
   const t = useTranslations("nav");
@@ -31,7 +48,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm"
+          ? "bg-background/95 border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -52,21 +69,14 @@ export function Navbar() {
               <Link
                 key={key}
                 href={href}
+                aria-current={isActive ? "page" : undefined}
                 className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors
                   ${isActive
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                   }`}
               >
-                {isActive && (
-                  <motion.span
-                    layoutId="nav-indicator"
-                    className="absolute inset-0 rounded-md bg-accent"
-                    style={{ zIndex: -1 }}
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {t(key)}
+                <NavItem label={t(key)} active={isActive} />
               </Link>
             );
           })}
