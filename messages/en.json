@@ -21,6 +21,64 @@
   "about": {
     "heading": "About Me",
     "homelab_caption": "Homelab infrastructure",
+    "homelab": {
+      "eyebrow": "Self-hosted platform",
+      "subtitle": "Three paths connect source code, protected public traffic, and production telemetry across the homelab.",
+      "lanes": {
+        "delivery": {
+          "title": "Delivery",
+          "description": "Commit to running containers"
+        },
+        "traffic": {
+          "title": "Traffic",
+          "description": "Public request to service"
+        },
+        "observe": {
+          "title": "Observe",
+          "description": "Host and service telemetry"
+        }
+      },
+      "nodes": {
+        "local": {
+          "title": "Local workspace",
+          "detail": "Develop, then push to master"
+        },
+        "actions": {
+          "detail": "Build, push, and deploy"
+        },
+        "registry": {
+          "detail": "Container registry"
+        },
+        "portainer": {
+          "detail": "API protected by Access"
+        },
+        "workloads": {
+          "title": "Docker workloads",
+          "delivery_detail": "Production services",
+          "traffic_detail": "Published applications",
+          "observe_detail": "Runtime signals"
+        },
+        "visitors": {
+          "title": "Visitors",
+          "detail": "Public requests"
+        },
+        "edge": {
+          "detail": "DNS and Zero Trust"
+        },
+        "tunnel": {
+          "detail": "Encrypted ingress"
+        },
+        "proxy": {
+          "detail": "TLS and routing"
+        },
+        "host": {
+          "detail": "Compute and storage"
+        },
+        "signoz": {
+          "detail": "Logs, metrics, and traces"
+        }
+      }
+    },
     "description": "I'm a Full Stack Developer with a passion for building clean, scalable web applications. I enjoy working across the stack — from crafting pixel-perfect UIs with React to designing robust backend systems with Java Spring Boot and Node.js. Outside of work, I run a homelab and love exploring new technologies."
   },
   "experience": {

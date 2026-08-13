@@ -21,6 +21,64 @@
   "about": {
     "heading": "自己紹介",
     "homelab_caption": "サーバー構成",
+    "homelab": {
+      "eyebrow": "セルフホスト基盤",
+      "subtitle": "ソースコードのデリバリー、保護された公開トラフィック、本番環境のテレメトリを3つの経路でつなぎます。",
+      "lanes": {
+        "delivery": {
+          "title": "デリバリー",
+          "description": "コミットからコンテナ稼働まで"
+        },
+        "traffic": {
+          "title": "トラフィック",
+          "description": "公開リクエストからサービスまで"
+        },
+        "observe": {
+          "title": "可観測性",
+          "description": "ホストとサービスのテレメトリ"
+        }
+      },
+      "nodes": {
+        "local": {
+          "title": "ローカル環境",
+          "detail": "開発後 master へ push"
+        },
+        "actions": {
+          "detail": "ビルド、プッシュ、デプロイ"
+        },
+        "registry": {
+          "detail": "コンテナレジストリ"
+        },
+        "portainer": {
+          "detail": "Access で保護された API"
+        },
+        "workloads": {
+          "title": "Docker ワークロード",
+          "delivery_detail": "本番サービス",
+          "traffic_detail": "公開アプリケーション",
+          "observe_detail": "ランタイムシグナル"
+        },
+        "visitors": {
+          "title": "訪問者",
+          "detail": "公開リクエスト"
+        },
+        "edge": {
+          "detail": "DNS と Zero Trust"
+        },
+        "tunnel": {
+          "detail": "暗号化された入口"
+        },
+        "proxy": {
+          "detail": "TLS とルーティング"
+        },
+        "host": {
+          "detail": "コンピュートとストレージ"
+        },
+        "signoz": {
+          "detail": "ログ、メトリクス、トレース"
+        }
+      }
+    },
     "description": "クリーンでスケーラブルなウェブアプリケーションの構築に情熱を注ぐフルスタック開発者です。ReactによるピクセルパーフェクトなUI構築から、Java Spring BootやNode.jsによる堅牢なバックエンドシステムの設計まで、スタック全体で働くことを楽しんでいます。仕事以外では、自宅サーバーを運用し、新しい技術の探求を楽しんでいます。"
   },
   "experience": {

@@ -21,6 +21,64 @@
   "about": {
     "heading": "關於我",
     "homelab_caption": "Homelab 架構",
+    "homelab": {
+      "eyebrow": "自架平台",
+      "subtitle": "三條路徑串連程式碼交付、受保護的公開流量，以及 Homelab 內的正式環境遙測。",
+      "lanes": {
+        "delivery": {
+          "title": "交付",
+          "description": "從提交程式碼到容器上線"
+        },
+        "traffic": {
+          "title": "流量",
+          "description": "從公開請求到應用服務"
+        },
+        "observe": {
+          "title": "觀測",
+          "description": "主機與服務遙測"
+        }
+      },
+      "nodes": {
+        "local": {
+          "title": "本機工作區",
+          "detail": "開發後推送至 master"
+        },
+        "actions": {
+          "detail": "建置、推送並部署"
+        },
+        "registry": {
+          "detail": "容器映像 Registry"
+        },
+        "portainer": {
+          "detail": "受 Access 保護的 API"
+        },
+        "workloads": {
+          "title": "Docker 工作負載",
+          "delivery_detail": "正式環境服務",
+          "traffic_detail": "對外發布的應用",
+          "observe_detail": "執行階段訊號"
+        },
+        "visitors": {
+          "title": "訪客",
+          "detail": "公開網路請求"
+        },
+        "edge": {
+          "detail": "DNS 與 Zero Trust"
+        },
+        "tunnel": {
+          "detail": "加密入口"
+        },
+        "proxy": {
+          "detail": "TLS 與流量路由"
+        },
+        "host": {
+          "detail": "運算與儲存"
+        },
+        "signoz": {
+          "detail": "日誌、指標與追蹤"
+        }
+      }
+    },
     "description": "我是一名Full-Stack Developer，熱衷於構建乾淨、可擴展的網頁應用。我喜歡在整個技術棧中工作 — 從使用 React 打造完美的 UI，到使用 Java Spring Boot 和 Node.js 設計穩健的後端系統。工作之餘，我經營自己的 Homelab，喜歡探索各種新技術。"
   },
   "experience": {

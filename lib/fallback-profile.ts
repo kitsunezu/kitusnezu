@@ -167,6 +167,18 @@ export const fallbackProfile: Profile = {
       tags: ["React", "TypeScript", "Vite", "Zustand", "Docker", "Nginx"],
     },
     {
+      name: "Eventernote Autofill",
+      description: {
+        en: "An AI-assisted workflow that turns public event URLs into reviewable, editable Eventernote data. It supports multi-session extraction, venue and performer matching, image review, and explicit confirmation before submission.",
+        "zh-TW":
+          "一套 AI 輔助工作流程，可將公開活動網址整理成可檢查、可編輯的 Eventernote 資料，支援多場次辨識、場地與演出者配對、圖片預覽，並僅在使用者明確確認後送出。",
+        ja: "公開イベントの URL から、確認・編集可能な Eventernote 用データを作成する AI 支援ツール。複数公演の抽出、会場・出演者の照合、画像確認に対応し、明示的な最終確認後にのみ登録します。",
+      },
+      url: "https://autofill.kitsunezu.com/",
+      sourceUrl: "https://github.com/kitsunezu/eventernote-autofill",
+      tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "OpenAI API", "Docker"],
+    },
+    {
       name: "Voiceprint Search",
       description: {
         en: "A self-hosted speaker identification platform for enrolling voices, verifying clips, and searching a database for the closest speaker match. Docker-first stack with a Next.js frontend, FastAPI inference service, PostgreSQL with pgvector, Redis, and MinIO.",
