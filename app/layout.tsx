@@ -5,7 +5,6 @@ import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BottomNav } from "@/components/layout/BottomNav";
-import { PageTransition } from "@/components/layout/PageTransition";
 import { ThreeBackground } from "@/components/three/ThreeBackground";
 import "./globals.css";
 
@@ -43,11 +42,7 @@ export default async function RootLayout({
         <Providers locale={locale} messages={messages as Record<string, unknown>}>
           <ThreeBackground />
           <Navbar />
-          <PageTransition>
-            <main className="flex-1">
-              {children}
-            </main>
-          </PageTransition>
+          <main className="flex-1">{children}</main>
           <Footer />
           <BottomNav />
         </Providers>

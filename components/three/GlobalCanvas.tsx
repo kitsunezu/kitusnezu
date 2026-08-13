@@ -26,7 +26,7 @@ export function GlobalCanvas() {
     >
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
-        dpr={isMobile ? 1 : Math.min(window.devicePixelRatio, 2)}
+        dpr={isMobile ? 1 : [1, 1.5]}
         gl={{ antialias: !isMobile, alpha: true, toneMapping: 0 }}
         style={{ background: "transparent" }}
       >
@@ -37,7 +37,7 @@ export function GlobalCanvas() {
           {/* Hero background — theme-aware */}
           {isDark ? (
             <InteractiveStars
-              count={isMobile ? 1000 : 3000}
+              count={isMobile ? 600 : 1500}
               isMobile={isMobile}
               opacity={heroOpacity}
             />
@@ -60,7 +60,7 @@ export function GlobalCanvas() {
 
           {/* Post-processing: Bloom glow */}
           {!isMobile && (
-            <EffectComposer>
+            <EffectComposer multisampling={0} resolutionScale={0.75}>
               <Bloom
                 luminanceThreshold={0.4}
                 luminanceSmoothing={0.9}
