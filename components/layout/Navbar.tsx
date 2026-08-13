@@ -55,6 +55,7 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
+          prefetch={true}
           className="flex items-center gap-1.5 text-lg font-bold tracking-tight hover:text-primary/80 transition-colors"
         >
           <span className="text-xl">🦊</span>
@@ -69,6 +70,7 @@ export function Navbar() {
               <Link
                 key={key}
                 href={href}
+                prefetch={true}
                 aria-current={isActive ? "page" : undefined}
                 className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors
                   ${isActive

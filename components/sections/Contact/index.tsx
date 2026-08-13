@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, Copy, Check } from "lucide-react";
 import { useState } from "react";
@@ -24,28 +23,13 @@ export function Contact({ email, sns }: ContactProps) {
   return (
     <section className="min-h-screen py-24 px-4 sm:px-6">
       <div className="mx-auto max-w-4xl text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent"
-        >
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
           {t("heading")}
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-4 text-lg text-muted-foreground"
-        >
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">
           {t("description")}
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="lg"
             nativeButton={false}
@@ -62,14 +46,9 @@ export function Contact({ email, sns }: ContactProps) {
             )}
             {t("copy_email")}
           </Button>
-        </motion.div>
+        </div>
         {sns.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-6 flex items-center justify-center gap-4"
-          >
+          <div className="mt-6 flex items-center justify-center gap-4">
             {sns.map((s) => (
               <Button
                 key={s.platform}
@@ -102,7 +81,7 @@ export function Contact({ email, sns }: ContactProps) {
                 {s.label}
               </Button>
             ))}
-          </motion.div>
+          </div>
         )}
       </div>
     </section>
