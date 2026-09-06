@@ -8571,6 +8571,24 @@
         var minTop = Math.min(visibleTop, maxTop);
         var nodeCenter = nodeRect.top - containerRect.top + nodeRect.height / 2;
         var mobile = window.innerWidth <= 720;
+        if (!mobile) {
+          var horizontalGap = 16;
+          var leftDock = 16;
+          var rightDock = Math.max(leftDock, containerRect.width - chip.offsetWidth - 16);
+          var nodeLeft = nodeRect.left - containerRect.left;
+          var nodeRight = nodeRect.right - containerRect.left;
+          var leftOverlapsNode = nodeLeft < leftDock + chip.offsetWidth + horizontalGap &&
+            nodeRight > leftDock - horizontalGap;
+          var rightOverlapsNode = nodeLeft < rightDock + chip.offsetWidth + horizontalGap &&
+            nodeRight > rightDock - horizontalGap;
+          if (leftOverlapsNode && !rightOverlapsNode) {
+            chip.style.left = Math.round(rightDock) + 'px';
+            chip.style.right = 'auto';
+          } else {
+            chip.style.removeProperty('left');
+            chip.style.removeProperty('right');
+          }
+        }
         var previewingOnMobile = mobile && chip.getAttribute('data-relationship-previewing') === 'true';
         var compactOnMobile = mobile && chip.getAttribute('data-relations-expanded') !== 'true';
         var preferred;
@@ -8688,6 +8706,8 @@
         relationsBtn.setAttribute('aria-label', viewerText('viewer.passport.relations.show'));
         relationsBtn.setAttribute('aria-expanded', 'false');
         chip.removeAttribute('data-relations-expanded');
+        chip.style.removeProperty('left');
+        chip.style.removeProperty('right');
         chip.style.removeProperty('top');
         if (options.preserveView !== true && Archify.view && typeof Archify.view.reset === 'function') {
           Archify.view.reset({ automatic: true });
@@ -8905,7 +8925,7 @@
         var target = event.target;
         if (chip.hidden || !target || typeof target.closest !== 'function' || chip.contains(target)) return;
         if (container.getAttribute('data-just-panned') === 'true') return;
-        if (target.closest('[data-node-id], [data-relationship-hit-key], .overview-map')) return;
+        if (target.closest('[data-node-id], [data-relationship-hit-key], .overview-map, .diagram-nav')) return;
         clear();
       }, true);
       window.addEventListener('scroll', requestLensPlacement, { passive: true });
@@ -11457,8 +11477,13 @@
       function clamp() {
         var width = svg.clientWidth || 1;
         var height = svg.clientHeight || 1;
-        state.x = Math.min(0, Math.max(width - width * state.scale, state.x));
-        state.y = Math.min(0, Math.max(height - height * state.scale, state.y));
+        // Semantic framing may expose a margin when a cropped viewBox removes
+        // authored whitespace from the visible canvas.
+        var allowSemanticMargin = state.mode === 'semantic';
+        var maxX = allowSemanticMargin ? width : 0;
+        var maxY = allowSemanticMargin ? height : 0;
+        state.x = Math.min(maxX, Math.max(width - width * state.scale, state.x));
+        state.y = Math.min(maxY, Math.max(height - height * state.scale, state.y));
       }
       function reducedMotion() {
         return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -11685,6 +11710,7 @@
         state.x = centerX - contentX * next;
         state.y = centerY - contentY * next;
         apply();
+        if (Archify.focus && Archify.focus.reposition) Archify.focus.reposition();
       }
       function reset(options) {
         options = options || {};
@@ -11761,8 +11787,10 @@
         var maxX = Math.max.apply(Math, boxes.map(function (box) { return box.x + box.width; }));
         var maxY = Math.max.apply(Math, boxes.map(function (box) { return box.y + box.height; }));
         var bounds = {
-          x: contentOffsetX + minX * contentScale,
-          y: contentOffsetY + minY * contentScale,
+          // getBBox() stays in authored SVG coordinates; normalize it to the
+          // active viewBox before calculating the camera target.
+          x: contentOffsetX + (minX - viewBox.x) * contentScale,
+          y: contentOffsetY + (minY - viewBox.y) * contentScale,
           width: Math.max(1, (maxX - minX) * contentScale),
           height: Math.max(1, (maxY - minY) * contentScale)
         };
@@ -11866,7 +11894,7 @@
         if (!boxes.length || !viewBox || viewBox.width <= 0) return false;
         var minX = Math.min.apply(Math, boxes.map(function (box) { return box.x; }));
         var maxX = Math.max.apply(Math, boxes.map(function (box) { return box.x + box.width; }));
-        var center = ((minX + maxX) / 2 / viewBox.width) * (svg.clientWidth || 1);
+        var center = (((minX + maxX) / 2 - viewBox.x) / viewBox.width) * (svg.clientWidth || 1);
         var target = Math.max(0, Math.min(svg.clientWidth - container.clientWidth, center - container.clientWidth / 2));
         var transaction = cameraReceipt({ scrollLeft: target }, options);
         cameraTransaction = transaction;
