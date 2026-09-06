@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { HomelabDiagram } from "@/components/sections/About/HomelabDiagram";
+import { ArchifyDiagram } from "@/components/sections/About/ArchifyDiagram";
 
 interface AboutProps {
   bio: string;
@@ -23,7 +23,7 @@ export function About({ bio }: AboutProps) {
         </div>
 
         <div className="mt-14">
-          <HomelabDiagram />
+          <ArchifyDiagram />
         </div>
       </div>
     </section>
