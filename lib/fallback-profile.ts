@@ -109,6 +109,17 @@ export const fallbackProfile: Profile = {
   ],
   projects: [
     {
+      name: "MyEventory",
+      description: {
+        en: "An event discovery and personal schedule platform for exploring events, artists, and venues. Features calendar and list views, account-synced schedules, and a responsive web interface in English, Traditional Chinese, and Japanese.",
+        "zh-TW":
+          "一個活動探索與個人行程管理平台，可瀏覽活動、藝人與會場資訊。支援月曆與列表檢視、帳號行程同步，並提供繁體中文、英文及日文的響應式網頁介面。",
+        ja: "イベント・アーティスト・会場を探せるイベント発見・スケジュール管理プラットフォーム。カレンダー・リスト表示、アカウントへのスケジュール同期に対応し、日本語・英語・繁体字中国語のレスポンシブなウェブ UI を提供。",
+      },
+      url: "https://myeventory.app/",
+      tags: ["React", "TypeScript", "Vite", "Node.js", "PostgreSQL", "Docker"],
+    },
+    {
       name: "Kitsunezu Portfolio",
       description: {
         en: "Personal portfolio website built with Next.js, React Three Fiber, and Framer Motion. Deployed via Docker and GitHub Actions CI/CD.",

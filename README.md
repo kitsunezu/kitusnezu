@@ -11,6 +11,7 @@ Useful tools, live events, and self-hosted things.
 
 ## `~/projects`
 
+- [MyEventory](https://myeventory.app/) — Discover events and keep your personal schedule in sync.
 - [younoter-livechat](https://github.com/kitsunezu/younoter-livechat) — Make YouTube live chat easier to follow.
 - [eventernote-dashboard](https://github.com/kitsunezu/eventernote-dashboard) — A personal dashboard for your events.
 - [toyoko-inn-monitor](https://github.com/kitsunezu/toyoko-inn-monitor) — Get notified when a room hits your target price.
